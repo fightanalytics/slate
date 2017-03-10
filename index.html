@@ -1,0 +1,1330 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Fight Analytics API Reference</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #f8f8f2;
+  background-color: #272822;
+}
+.highlight .err {
+  color: #272822;
+  background-color: #f92672;
+}
+.highlight .c, .highlight .cd, .highlight .cm, .highlight .c1, .highlight .cs {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #f4bf75;
+}
+.highlight .nt {
+  color: #f4bf75;
+}
+.highlight .o, .highlight .ow {
+  color: #f8f8f2;
+}
+.highlight .p, .highlight .pi {
+  color: #f8f8f2;
+}
+.highlight .gi {
+  color: #a6e22e;
+}
+.highlight .gd {
+  color: #f92672;
+}
+.highlight .gh {
+  color: #66d9ef;
+  background-color: #272822;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #ae81ff;
+}
+.highlight .kc {
+  color: #fd971f;
+}
+.highlight .kt {
+  color: #fd971f;
+}
+.highlight .kd {
+  color: #fd971f;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #a6e22e;
+}
+.highlight .sr {
+  color: #a1efe4;
+}
+.highlight .si {
+  color: #cc6633;
+}
+.highlight .se {
+  color: #cc6633;
+}
+.highlight .nn {
+  color: #f4bf75;
+}
+.highlight .nc {
+  color: #f4bf75;
+}
+.highlight .no {
+  color: #f4bf75;
+}
+.highlight .na {
+  color: #66d9ef;
+}
+.highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mb, .highlight .mx {
+  color: #a6e22e;
+}
+.highlight .ss {
+  color: #a6e22e;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;ruby&quot;,&quot;javascript&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+      <img src="images/logo.png" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="ruby">ruby</a>
+              <a href="#" data-language-name="javascript">javascript</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <div id="toc">
+      </div>
+        <ul class="toc-footer">
+            <li><a href='#'>Talk with our dev support</a></li>
+            <li><a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id="welcome">Welcome</h1>
+
+<p>Seja bem-vindo a documentação da Fight Analytics! Aqui você encontrará guias e referências sobre como usar nossa API.</p>
+
+<h2 id="introdu-o">Introdução</h2>
+
+<p>É através desta API que você irá integrar seu sistema ao nossos dados, e, além disso, você também pode recriar as funcionalidades existentes dos nossos produtos que são feitas consumindo a API que será aqui descrita.
+Nossa API é <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">RESTful</a> e todas as respostas são em <a href="http://www.json.org/">JSON</a>. Todas as requisições são feitas no endpoint:</p>
+
+<p><code class="prettyprint">https://api.fightanalytics.cc/v1/api</code></p>
+
+          <h1 id="events">Events</h1>
+
+<h2 id="get-all-events">Get All Events</h2>
+<pre class="highlight ruby"><code></code></pre><pre class="highlight javascript"><code></code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"title"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"UFC's events"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"events"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"event_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"588fbc3191c1bd0a78859456"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"data"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"UFC Fight Night 104"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"date"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"02.04.2017"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"location"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Houston, Texas"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"poster_image"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"url"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"promotion"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"UFC"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all events.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://api.fightanalytics.cc/v1/api/events</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">event_id</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">data</code></td>
+<td>array</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">date</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">location</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">poster_image</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">promotion</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-a-specific-event">Get a Specific Event</h2>
+<pre class="highlight ruby"><code></code></pre><pre class="highlight javascript"><code></code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"event_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"588fbc3191c1bd0a78859456"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"data"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"UFC Fight Night 104"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"date"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"02.04.2017"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"location"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Houston, Texas"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"poster_image"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"url"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"promotion"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"UFC"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nt">"card"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"fight_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"588fbd7291c1bd0a7885945a"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"fighter_red"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"fighter_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"56c2509e5ce43c5a0c69a18a"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"first_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Dennis"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"last_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Bermudez"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"nick_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"The Menace"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"profile_image"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"/uploads/thumb/Dennis-Bermudez_231392_FighterProfile_30.png"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"body_image"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"/uploads/regular/Dennis-Bermudez_231392_LeftFullBodyImage.png"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"record"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"16 / 5 / 0"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"country"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"United-States"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nt">"fighter_blue"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"fighter_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"588fbd1391c1bd0a78859459"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"first_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Chan"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"last_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Sung Jung"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"nick_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"The Korean Zombie"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"profile_image"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"/uploads/thumb/Chan-Sung-Jung_1160_FighterProfile_30.png"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"body_image"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"/uploads/regular/Chan-Sung-Jung_1160_RightFullBodyImage.png"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"record"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"13 / 4 / 0"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"country"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"South-Korea"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nt">"result"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"winner"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"blue"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"winner_by"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"KO"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"at_round"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"at_time"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2:29"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves a specific event.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://api.fightanalytics.cc/v1/api/events/&lt;ID&gt;</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">ID</code></td>
+<td>The ID of the event to retrieve</td>
+</tr>
+</tbody></table>
+
+<h3 id="available-query-parameters">Available Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">event_id</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">data</code></td>
+<td>array</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">name</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">date</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">location</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">poster_image</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">promotion</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">card</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">fight_id</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">fighter_red</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">fighter_id</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">first_name</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">last_name</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">nick_name</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">profile_image</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">body_image</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">record</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">country</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">fighter_blue</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">fighter_id</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">first_name</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">last_name</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">nick_name</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">profile_image</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">body_image</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">record</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">country</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">result</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">winner</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">winner_by</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">at_round</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">at_time</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+</tbody></table>
+
+          <h1 id="fighters">Fighters</h1>
+
+<h2 id="get-all-fighters">Get All Fighters</h2>
+<pre class="highlight ruby"><code></code></pre><pre class="highlight javascript"><code></code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UFC's fighters"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"fighters"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+   </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"fighter_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56cbe6325ce43c5a0c69a1bd"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Anderson"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Silva"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"nick"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Spider"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nt">"image"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/uploads/thumb/Anderson-Silva_753_FighterProfile_30.png"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/uploads/regular/Anderson-Silva_753_LeftFullBodyImage.png"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nt">"record"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"wins"</span><span class="p">:</span><span class="w"> </span><span class="mi">33</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"loses"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"draws"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nt">"wins"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"ko"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"dec"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"sub"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"age"</span><span class="p">:</span><span class="w"> </span><span class="s2">"40"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"height"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6'2\""</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"reach"</span><span class="p">:</span><span class="w"> </span><span class="s2">"77.5\""</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"weight"</span><span class="p">:</span><span class="w"> </span><span class="s2">"185.0 lbs"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sao Paulo"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"team"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Team Nogueira"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"style"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Muay Thai"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brazil"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"weight_class"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Middleweight"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+   </span><span class="err">}</span><span class="w">
+ </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all fighters.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://api.fightanalytics.cc/v1/api/fighters</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">event_id</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">title</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">fighters</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">fighter_id</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">name</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">first</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">last</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">nick</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">image</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">record</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">wins</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">data</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">age</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">height</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">reach</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">weight</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">city</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">team</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">style</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">country</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">weight_class</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-a-specific-fighter">Get a specific fighter</h2>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"fighter_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56cbe6325ce43c5a0c69a1bd"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Anderson"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Silva"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"nick"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Spider"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nt">"image"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/uploads/thumb/Anderson-Silva_753_FighterProfile_30.png"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/uploads/regular/Anderson-Silva_753_LeftFullBodyImage.png"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nt">"record"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"wins"</span><span class="p">:</span><span class="w"> </span><span class="mi">33</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"loses"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"draws"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nt">"wins"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"ko"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"dec"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"sub"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"age"</span><span class="p">:</span><span class="w"> </span><span class="s2">"40"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"height"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6'2\""</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"reach"</span><span class="p">:</span><span class="w"> </span><span class="s2">"77.5\""</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"weight"</span><span class="p">:</span><span class="w"> </span><span class="s2">"185.0 lbs"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sao Paulo"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"team"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Team Nogueira"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"style"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Muay Thai"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brazil"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"weight_class"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Middleweight"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://api.fightanalytics.cc/v1/api/fighters/&lt;ID&gt;</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">event_id</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">title</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">fighters</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">fighter_id</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">name</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">first</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">last</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">nick</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">image</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">record</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">wins</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">data</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">age</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">height</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">reach</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">weight</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">city</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">team</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">style</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">country</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">weight_class</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+</tbody></table>
+
+          <h1 id="fights">Fights</h1>
+
+<h2 id="get-a-specific-fight">Get a specific fight</h2>
+<pre class="highlight ruby"><code></code></pre><pre class="highlight javascript"><code></code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"fight_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"587add847b6df2262d40749c"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5861bafe0503c3eb32db94c0"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"finalizada"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">99</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"rounds"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"round_active"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"main_event"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nt">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"winner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"winnerRed"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"winner_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TKO"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"at_round"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"at_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0:48"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nt">"fighters"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"red"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"fighter_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d4d1a19f0e9d0c09671960"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Amanda"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nunes"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Amanda Nunes"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"nick_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Lioness"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"br"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nt">"blue"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"fighter_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56410d10ec89eecc2b68f82e"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ronda"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rousey"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ronda Rousey"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"nick_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rowdy"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"us"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nt">"tale"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"age"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"info_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Age"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"red"</span><span class="p">:</span><span class="w"> </span><span class="s2">"28"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"blue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"29"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nt">"height"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"info_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Height"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"red"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5'5\""</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"blue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5'6\""</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nt">"reach"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"info_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Reach"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"red"</span><span class="p">:</span><span class="w"> </span><span class="s2">"69.0\""</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"blue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"66.0\""</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nt">"weight"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"info_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Weight"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"red"</span><span class="p">:</span><span class="w"> </span><span class="s2">"135.0 lbs"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"blue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"135.0 lbs"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nt">"record"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"info_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Record"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"red"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13 / 0 / 4"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"blue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12 / 0 / 1"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nt">"wins"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"info_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wins"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"red"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"blue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nt">"draws"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"info_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Draws"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"red"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"blue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nt">"loses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"info_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Loses"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"red"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"blue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"info_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"City"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"red"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bahia"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"blue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"California"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nt">"team"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"info_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Team"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"red"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ATT"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"blue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Glendale"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nt">"style"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"b"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Style"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"red"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"blue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Judo"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nt">"stats"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"stats_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Strikes Thrown"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"slug_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"strikes-thrown"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"rounds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"red"</span><span class="p">:</span><span class="w"> </span><span class="mi">48</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"blue"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"stats_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Significant Strikes Landed"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"slug_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"significant-strikes-landed"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"rounds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"red"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"blue"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"stats_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Takedowns Attempted"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"slug_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"takedowns-attempted"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"rounds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"red"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"blue"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"stats_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Takedowns"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"slug_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"takedowns"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"rounds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"red"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"blue"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"stats_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Submissions attempted"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"slug_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"submissions-attempted"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"rounds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"red"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"blue"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"stats_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Takedowns Defended"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"slug_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"takedowns-defended"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"rounds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"red"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"blue"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"stats_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cage Control"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"slug_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cage-control"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"rounds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"red"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"blue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"stats_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ground Control"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"slug_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ground-control"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"rounds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"red"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"blue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Para as lutas não temos um endpoint que retorne todas elas porque não faz muito sentido na minha opinião. Os filtros de lutas em views sempre serão a partir de algum lutador, ou a partir de alguem evento. O widget de luta é para análise ou comparação com outras de um mesmo lutador ou evento. </p>
+
+<p>O Json retornado é separado em 5 &ldquo;áreas&rdquo;:
+- <code class="prettyprint">&quot;data&quot;</code> 
+- <code class="prettyprint">&quot;result&quot;</code> 
+- <code class="prettyprint">&quot;fighters&quot;</code> 
+- <code class="prettyprint">&quot;tale&quot;</code> 
+- <code class="prettyprint">&quot;stats&quot;</code></p>
+
+<p>Foi feito assim porque são os componentes básicos da view. Fica mais fácil de chamar eles nos loops separados pelas divs do layout.</p>
+
+<p>Outra coisa também é que tanto em <code class="prettyprint">stats</code> <code class="prettyprint">tale</code> é um loop chato de fazer e chamar cada um dos stats, do jeito que foi feito é só fazer um loop que vai pegar todos e até os nomes.</p>
+
+<h2 id="parametros-de-data">Parametros de data</h2>
+<pre class="highlight plaintext"><code>"data": [
+    {
+      "event_id": "5861bafe0503c3eb32db94c0",
+      "status": "finalizada",
+      "order": 99,
+      "rounds": 1,
+      "round_active": 1,
+      "main_event": true
+    }
+  ],
+</code></pre>
+<p>Data é o mais simples de todos, basicamente só strings que servem de informação para o evento, seguem abaixo:</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">event_id</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">status</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">order</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">rounds</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">round_active</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">main_event</code></td>
+<td>boolean</td>
+<td>&hellip;</td>
+</tr>
+</tbody></table>
+
+<h2 id="parametros-de-result">Parametros de result</h2>
+<pre class="highlight plaintext"><code>  "result": [
+    {
+      "winner": "winnerRed",
+      "winner_by": "TKO",
+      "at_round": "1",
+      "at_time": "0:48"
+    }
+  ],
+</code></pre>
+<p>A parte de resultados</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">winner</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">winner_by</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">at_round</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">at_time</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+</tbody></table>
+
+<h2 id="parametros-de-fighters">Parametros de fighters</h2>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">fighters</code></td>
+<td>array</td>
+<td>&hellip;</td>
+</tr>
+</tbody></table>
+<pre class="highlight plaintext"><code>  "fighters": [
+    {
+      "red": [
+        {
+          "fighter_id": "56d4d1a19f0e9d0c09671960",
+          "first_name": "Amanda",
+          "last_name": "Nunes",
+          "full_name": "Amanda Nunes",
+          "nick_name": "The Lioness",
+          "country": "br"
+        }
+      ],
+      "blue": [
+        {
+          "fighter_id": "56410d10ec89eecc2b68f82e",
+          "first_name": "Ronda",
+          "last_name": "Rousey",
+          "full_name": "Ronda Rousey",
+          "nick_name": "Rowdy",
+          "country": "us"
+        }
+      ]
+    }
+  ],
+</code></pre>
+<h2 id="array-de-tale">Array de tale</h2>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">tale_name</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">red</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">blue</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+</tbody></table>
+<pre class="highlight ruby"><code>
+  <span class="k">for</span> <span class="n">item</span> <span class="k">in</span> <span class="vi">@tale</span>
+
+    <span class="n">item</span><span class="p">[</span><span class="s2">"tale_name"</span><span class="p">]</span> 
+    <span class="n">item</span><span class="p">[</span><span class="s2">"red"</span><span class="p">]</span>
+    <span class="n">item</span><span class="p">[</span><span class="s2">"blue"</span><span class="p">]</span>
+
+  <span class="k">end</span>
+
+</code></pre>
+<h2 id="array-de-stats">Array de stats</h2>
+<pre class="highlight ruby"><code>
+<span class="k">for</span> <span class="n">round</span> <span class="k">in</span> <span class="n">rounds</span> 
+  <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="k">for</span> <span class="n">stat</span> <span class="k">in</span> <span class="vi">@stats</span>
+
+    <span class="n">stat</span><span class="p">[</span><span class="s2">"stats_name"</span><span class="p">]</span>
+    <span class="n">stat</span><span class="p">[</span><span class="s2">"rounds"</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="s2">"red"</span><span class="p">]</span>
+    <span class="n">stat</span><span class="p">[</span><span class="s2">"rounds"</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="s2">"blue"</span><span class="p">]</span>
+
+  <span class="k">end</span>
+  <span class="n">i</span><span class="o">+</span>
+<span class="k">end</span>
+
+</code></pre><pre class="highlight plaintext"><code>  "stats": [
+    {
+      "stats_name": "Strikes Thrown",
+      "slug_name": "strikes-thrown",
+      "rounds": [
+        {
+          "red": 48,
+          "blue": 12
+        }
+      ]
+    },
+    {
+      "stats_name": "Significant Strikes Landed",
+      "slug_name": "significant-strikes-landed",
+      "rounds": [
+        {
+          "red": 19,
+          "blue": 1
+        }
+      ]
+    },
+    {
+      "stats_name": "Takedowns Attempted",
+      "slug_name": "takedowns-attempted",
+      "rounds": [
+        {
+          "red": 0,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "stats_name": "Takedowns",
+      "slug_name": "takedowns",
+      "rounds": [
+        {
+          "red": 0,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "stats_name": "Submissions attempted",
+      "slug_name": "submissions-attempted",
+      "rounds": [
+        {
+          "red": 0,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "stats_name": "Takedowns Defended",
+      "slug_name": "takedowns-defended",
+      "rounds": [
+        {
+          "red": 0,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "stats_name": "Cage Control",
+      "slug_name": "cage-control",
+      "rounds": [
+        {
+          "red": "0",
+          "blue": "0"
+        }
+      ]
+    },
+    {
+      "stats_name": "Ground Control",
+      "slug_name": "ground-control",
+      "rounds": [
+        {
+          "red": "0",
+          "blue": "0"
+        }
+      ]
+    }
+  ]
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">stats_name</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">stats_name</code></td>
+<td>rounds</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">red</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code class="prettyprint">blue</code></td>
+<td>string</td>
+<td>&hellip;</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="ruby">ruby</a>
+                <a href="#" data-language-name="javascript">javascript</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
